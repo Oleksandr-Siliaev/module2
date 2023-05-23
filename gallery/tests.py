@@ -1,4 +1,6 @@
 from django.test import TestCase
+
+
 from .models import Image, Category
 
 class ImageModelTest(TestCase):
@@ -15,6 +17,7 @@ class ImageModelTest(TestCase):
     def test_image_has_category(self):
         self.assertEqual(self.image.categories.count(), 1)
         self.assertEqual(self.image.categories.first(), self.category)
+      
 
     def test_image_str_representation(self):
         self.assertEqual(str(self.image), 'Test Image')
